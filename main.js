@@ -20,6 +20,7 @@ function seleccionar(element) {
 }
 
 function seleccionarPC(eleccion) {
+  resultado.classList.remove("inactive");
   const pcEleccion = options[getRandomInt(3)];
   if (eleccion !== pcEleccion) {
     if (
@@ -28,13 +29,10 @@ function seleccionarPC(eleccion) {
       (eleccion === "tijera" && pcEleccion === "papel")
     ) {
       resultado.innerHTML = `Ganaste🎉<br> Tu eleccion fue ${eleccion} y el del oponente fue ${pcEleccion}. `;
-      resultado.classList.remove("inactive");
     } else {
       resultado.innerHTML = `Perdiste😢<br> Tu eleccion fue ${eleccion} y el del oponente fue ${pcEleccion}. `;
-      resultado.classList.remove("inactive");
     }
   } else {
     resultado.innerHTML = `Empataste🤝<br> Tu eleccion fue ${eleccion} y el del oponente fue ${pcEleccion}. `;
-    resultado.classList.remove("inactive");
   }
 }
